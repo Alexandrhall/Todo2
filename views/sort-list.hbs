@@ -1,7 +1,7 @@
 <div class="listWrap">
     <h4>To do</h4>
     <ul id="myList" class="list">
-        {{#each tasks}}
+        {{#each list}}
             {{#unless done}}
                 <li class="task">
                     <a
@@ -18,7 +18,7 @@
 <div class="listWrap">
     <h4>Done</h4>
     <ul id="doneList" class="list">
-        {{#each tasks}}
+        {{#each list}}
             {{#if done}}
                 <li class="task">
                     <a
