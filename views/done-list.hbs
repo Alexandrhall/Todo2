@@ -1,0 +1,22 @@
+<div class="listWrap">
+    <h4>To do</h4>
+    <ul id="myList" class="list">
+    </ul>
+</div>
+<div class="listWrap">
+    <h4>Done</h4>
+    <ul id="doneList" class="list">
+        {{#each tasks}}
+            {{#if done}}
+                <li class="task">
+                    <a
+                        href="/checked/{{_id}}"
+                        class="linkname isdone"
+                    >{{description}}</a>
+                    <a href="/edit/{{_id}}" class="close">E</a>
+                    <a href="/del/{{_id}}" class="close">X</a>
+                </li>
+            {{/if}}
+        {{/each}}
+    </ul>
+</div>
