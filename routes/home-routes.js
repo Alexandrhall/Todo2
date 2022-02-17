@@ -15,20 +15,26 @@ router.get(
     }
 );
 
-router.post("/", async (req, res) => {
-    let dateNow = JSON.stringify(new Date());
+router.post(
+    "/",
+    async (req, res, next) => {
+        middleWare(req, res, next);
+    },
+    async (req, res) => {
+        let dateNow = JSON.stringify(new Date());
 
-    if (req.body.description != "") {
-        const newTask = {
-            created: dateNow,
-            description: req.body.description,
-            done: false,
-        };
-        const db = await database.getDb();
-        await db.collection("tasks").insertOne(newTask);
+        if (req.body.description != "") {
+            const newTask = {
+                created: dateNow,
+                description: req.body.description,
+                done: false,
+            };
+            const db = await database.getDb();
+            await db.collection("tasks").insertOne(newTask);
+        }
+
+        res.redirect("/");
     }
-
-    res.redirect("/");
-});
+);
 
 module.exports = router;
