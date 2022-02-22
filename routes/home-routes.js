@@ -1,6 +1,6 @@
 const express = require("express");
-const database = require("../database.js");
-const middleWare = require("../utils.js");
+const database = require("../data/database.js");
+const middleWare = require("../data/utils.js");
 
 const router = express.Router();
 

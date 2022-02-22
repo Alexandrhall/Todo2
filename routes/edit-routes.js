@@ -1,6 +1,6 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
-const database = require("../database.js");
+const database = require("../data/database.js");
 const { ObjectId } = require("mongodb");
 
 const router = express.Router();

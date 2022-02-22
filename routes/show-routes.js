@@ -1,6 +1,6 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
-const db = require("../database.js");
+const database = require("../data/database.js");
 
 const router = express.Router();
 
@@ -9,12 +9,12 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/done", async (req, res) => {
-    const tasks = await db.getTodo();
+    const tasks = await database.getTodo();
     res.render("done-list", { tasks });
 });
 
 router.get("/undone", async (req, res) => {
-    const tasks = await db.getTodo();
+    const tasks = await database.getTodo();
     res.render("undone-list", { tasks });
 });
 
